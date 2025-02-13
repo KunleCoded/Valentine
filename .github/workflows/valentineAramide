@@ -1,1 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Happy Valentine's Day!</title>
+<style>
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #f7cac9; /* Light pink background */
+}
+#container {
+  margin-top: 50px;
+}
+button {
+  padding: 10px 20px;
+  background-color: #e9967a; /* Tomato-ish button color */
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+#message {
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: #800000; /* Maroon text */
+}
+</style>
+</head>
+<body>
 
+<div id="container">
+  <h1>Will you be my Valentine?</h1>
+  <button id="askButton">Yes!</button>
+  <button id="noButton">No</button>
+  <div id="message"></div>
+</div>
+
+<script>
+  const askButton = document.getElementById("askButton");
+  const noButton = document.getElementById("noButton");
+  const messageDiv = document.getElementById("message");
+
+  askButton.addEventListener("click", () => {
+    messageDiv.textContent = "Great! I'm so excited!  Let's plan a date.  How about [Suggest a date/activity]?"; // Customize this!
+    askButton.style.display = "none"; // Hide the Yes button
+    noButton.style.display = "none";  // Hide the No button
+  });
+
+  noButton.addEventListener("click", () => {
+    messageDiv.textContent = "Aw, shucks.  Maybe next time?"; // Or a more playful response
+    askButton.style.display = "none"; // Hide the Yes button
+    noButton.style.display = "none";  // Hide the No button
+  });
+
+</script>
+
+</body>
+</html>
